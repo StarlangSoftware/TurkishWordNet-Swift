@@ -93,3 +93,73 @@ Result: The imported project is listed in the Project Explorer view and files ar
 **From IDE**
 
 After being done with the downloading and opening project, select **Build** option from **Product** menu. After compilation process, user can run TurkishWordNet-Swift.
+
+Detailed Description
+============
+
++ [WordNet](#wordnet)
++ [SynSet](#synset)
++ [Synonym](#synonym)
+
+## WordNet
+
+To load the WordNet KeNet,
+
+	let a = WordNet()
+
+To load a particular WordNet,
+
+	let domain = WordNet("domain_wordnet.xml", locale("tr"));
+
+To bring all the synsets,
+
+	synSetList()
+
+To bring a particular synset,
+
+	getSynSetWithId(synSetId: String)
+
+And, to bring all the meanings (Synsets) of a particular word, the following is used.
+
+	getSynSetsWithLiteral(literal: String)
+
+## SynSet
+
+Synonym is procured in order to find the synonymous literals of a synset.
+
+	getSynonym()
+	
+In order to obtain the Relations inside a synset as index based, the following method is used.
+
+	getRelation(index: Int)
+
+For instance, all the relations in a synset can be found with the following method.
+
+
+
+	for i in 0..<synset.RelationSize(){
+		relation = synset.getRelation(i)
+		...
+	}
+
+## Synonym
+
+The literals inside the Synonym can be found as index based with the following method.
+
+	getLiteral(index: Int)
+
+For example, all the literals inside a synonym can be found with the following:
+
+	for i in 0..<synonym.LiteralSize() {
+		literal = synonym.getLiteral(i)
+		...
+	}
+
+# Cite
+
+	@inproceedings{bakay21,
+ 	title={{T}urkish {W}ord{N}et {K}e{N}et},
+ 	year={2021},
+ 	author={O. Bakay and O. Ergelen and E. Sarmis and S. Yildirim and A. Kocabalcioglu and B. N. Arican and M. Ozcelik and E. Saniyar and O. Kuyrukcu and B. 	Avar and O. T. Y{\i}ld{\i}z},
+ 	booktitle={Proceedings of GWC 2021}
+ 	}
