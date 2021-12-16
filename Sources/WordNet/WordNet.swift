@@ -25,25 +25,23 @@ public class WordNet: NSObject, XMLParserDelegate{
     private var synonymMode: Bool = false
     private var to: String? = nil
     
-    private func parse(fileName: String){
-        let thisSourceFile = URL(fileURLWithPath: #file)
-        let thisDirectory = thisSourceFile.deletingLastPathComponent()
-        let url = thisDirectory.appendingPathComponent(fileName)
-        let parser : XMLParser = XMLParser(contentsOf: url)!
+    private func parse(fileName: String = "turkish_wordnet"){
+        let url = Bundle.module.url(forResource: fileName, withExtension: "xml")
+        let parser : XMLParser = XMLParser(contentsOf: url!)!
         parser.delegate = self
         parser.parse()
     }
 
     public override init(){
         super.init()
-        parse(fileName: "turkish_wordnet.xml")
+        parse()
     }
 
     public init(fileName: String){
         super.init()
         locale = Locale(identifier: "en")
         parse(fileName: fileName)
-        parse(fileName: "english_exception.xml")
+        parse(fileName: "english_exception")
     }
 
     public init(fileName: String, locale: Locale){
