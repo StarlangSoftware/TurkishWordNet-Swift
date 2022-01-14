@@ -17,6 +17,7 @@ public class SynSet : Equatable{
     private var synonym: Synonym
     private var relations: [Relation]
     private var note: String = ""
+    private var wikiPage: String = ""
     private var bcs: Int = 0
     
     /**
@@ -213,7 +214,25 @@ public class SynSet : Equatable{
     public func getNote() -> String{
         return note
     }
+
+    /**
+     * Mutator for the available notes.
+     - Parameters:
+        - wikiPage: String wikiPage to be set
+     */
+    public func setWikiPage(wikiPage: String){
+        self.wikiPage = wikiPage
+    }
     
+    /**
+     * Accessor for the wiki page.
+     *
+        - Returns: String wiki page
+     */
+    public func getWikiPage() -> String{
+        return wikiPage
+    }
+
     /**
      * Appends the specified Relation to the end of relations list.
      - Parameters:

@@ -99,6 +99,8 @@ public class WordNet: NSObject, XMLParserDelegate{
                 value = ""
             case "EXAMPLE":
                 value = ""
+            case "WIKI":
+                value = ""
             case "ILR":
                 value = ""
             case "SR":
@@ -150,6 +152,8 @@ public class WordNet: NSObject, XMLParserDelegate{
                     default:
                         break
                 }
+            case "WIKI":
+                synSet?.setWikiPage(wikiPage: value)
             case "DEF":
                 synSet?.setDefinition(definition: value)
             case "EXAMPLE":

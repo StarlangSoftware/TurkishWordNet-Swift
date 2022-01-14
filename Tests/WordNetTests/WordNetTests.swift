@@ -6,7 +6,7 @@ final class WordNetTest: XCTestCase {
     var turkish : WordNet = WordNet()
     
     func testSize() {
-        XCTAssertEqual(77279, turkish.size())
+        XCTAssertEqual(77100, turkish.size())
     }
 
     func testSynSetList() {
@@ -14,11 +14,21 @@ final class WordNetTest: XCTestCase {
         for synSet in turkish.synSetList() {
             literalCount += synSet.getSynonym().literalSize()
         }
-        XCTAssertEqual(109059, literalCount)
+        XCTAssertEqual(109007, literalCount)
+    }
+
+    func testWikiPages() {
+        var wikiCount : Int = 0
+        for synSet in turkish.synSetList() {
+            if synSet.getWikiPage() != ""{
+                wikiCount += 1
+            }
+        }
+        XCTAssertEqual(10987, wikiCount)
     }
 
     func testLiteralList() {
-        XCTAssertEqual(81070, turkish.literalList().count)
+        XCTAssertEqual(81062, turkish.literalList().count)
     }
     
     func testGetSynSetWithId(){
@@ -84,10 +94,10 @@ final class WordNetTest: XCTestCase {
     }
     
     func testGetSynSetsWithPartOfSpeech(){
-        XCTAssertEqual(44050, turkish.getSynSetsWithPartOfSpeech(pos: Pos.NOUN).count)
-        XCTAssertEqual(17773, turkish.getSynSetsWithPartOfSpeech(pos: Pos.VERB).count)
-        XCTAssertEqual(12410, turkish.getSynSetsWithPartOfSpeech(pos: Pos.ADJECTIVE).count)
-        XCTAssertEqual(2548, turkish.getSynSetsWithPartOfSpeech(pos: Pos.ADVERB).count)
+        XCTAssertEqual(43871, turkish.getSynSetsWithPartOfSpeech(pos: Pos.NOUN).count)
+        XCTAssertEqual(17776, turkish.getSynSetsWithPartOfSpeech(pos: Pos.VERB).count)
+        XCTAssertEqual(12406, turkish.getSynSetsWithPartOfSpeech(pos: Pos.ADJECTIVE).count)
+        XCTAssertEqual(2549, turkish.getSynSetsWithPartOfSpeech(pos: Pos.ADVERB).count)
         XCTAssertEqual(339, turkish.getSynSetsWithPartOfSpeech(pos: Pos.INTERJECTION).count)
         XCTAssertEqual(68, turkish.getSynSetsWithPartOfSpeech(pos: Pos.PRONOUN).count)
         XCTAssertEqual(61, turkish.getSynSetsWithPartOfSpeech(pos: Pos.CONJUNCTION).count)
