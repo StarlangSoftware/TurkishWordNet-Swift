@@ -26,7 +26,8 @@ let package = Package(
                       "turkish1969_dictionary.txt", "turkish1969_wordnet.xml",
                       "turkish1974_dictionary.txt", "turkish1974_wordnet.xml",
                       "turkish1983_dictionary.txt", "turkish1983_wordnet.xml",
-                      "turkish1988_dictionary.txt", "turkish1988_wordnet.xml"],
+                      "turkish1988_dictionary.txt", "turkish1988_wordnet.xml",
+                      "turkish1998_dictionary.txt", "turkish1998_wordnet.xml"],
             resources: [.process("turkish_wordnet.xml"),.process("english_wordnet_version_31.xml"),.process("english_exception.xml")]),
         .testTarget(
             name: "WordNetTests",

@@ -6,7 +6,7 @@ final class WordNetTest: XCTestCase {
     var turkish : WordNet = WordNet()
     
     func testSize() {
-        XCTAssertEqual(77100, turkish.size())
+        XCTAssertEqual(78311, turkish.size())
     }
 
     func testSynSetList() {
@@ -14,7 +14,7 @@ final class WordNetTest: XCTestCase {
         for synSet in turkish.synSetList() {
             literalCount += synSet.getSynonym().literalSize()
         }
-        XCTAssertEqual(109007, literalCount)
+        XCTAssertEqual(110236, literalCount)
     }
 
     func testWikiPages() {
@@ -28,7 +28,7 @@ final class WordNetTest: XCTestCase {
     }
 
     func testLiteralList() {
-        XCTAssertEqual(81062, turkish.literalList().count)
+        XCTAssertEqual(82255, turkish.literalList().count)
     }
     
     func testGetSynSetWithId(){
@@ -94,11 +94,11 @@ final class WordNetTest: XCTestCase {
     }
     
     func testGetSynSetsWithPartOfSpeech(){
-        XCTAssertEqual(43871, turkish.getSynSetsWithPartOfSpeech(pos: Pos.NOUN).count)
-        XCTAssertEqual(17776, turkish.getSynSetsWithPartOfSpeech(pos: Pos.VERB).count)
-        XCTAssertEqual(12406, turkish.getSynSetsWithPartOfSpeech(pos: Pos.ADJECTIVE).count)
+        XCTAssertEqual(43869, turkish.getSynSetsWithPartOfSpeech(pos: Pos.NOUN).count)
+        XCTAssertEqual(17772, turkish.getSynSetsWithPartOfSpeech(pos: Pos.VERB).count)
+        XCTAssertEqual(12410, turkish.getSynSetsWithPartOfSpeech(pos: Pos.ADJECTIVE).count)
         XCTAssertEqual(2549, turkish.getSynSetsWithPartOfSpeech(pos: Pos.ADVERB).count)
-        XCTAssertEqual(339, turkish.getSynSetsWithPartOfSpeech(pos: Pos.INTERJECTION).count)
+        XCTAssertEqual(1552, turkish.getSynSetsWithPartOfSpeech(pos: Pos.INTERJECTION).count)
         XCTAssertEqual(68, turkish.getSynSetsWithPartOfSpeech(pos: Pos.PRONOUN).count)
         XCTAssertEqual(61, turkish.getSynSetsWithPartOfSpeech(pos: Pos.CONJUNCTION).count)
         XCTAssertEqual(30, turkish.getSynSetsWithPartOfSpeech(pos: Pos.PREPOSITION).count)
