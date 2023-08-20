@@ -131,6 +131,8 @@ public class WordNet: NSObject, XMLParserDelegate{
                 literal = nil
             case "SENSE":
                 literal?.setSense(sense: Int(value)!)
+            case "ORIGIN":
+                literal?.setOrigin(origin: value)
             case "POS":
                 switch value {
                     case "a":
