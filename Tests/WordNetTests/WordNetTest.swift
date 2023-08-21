@@ -31,14 +31,26 @@ final class WordNetTest: XCTestCase {
         var count : Int = 0
         for synSet in turkish.synSetList() {
             for i in 0..<synSet.getSynonym().literalSize() {
-                if (synSet.getSynonym().getLiteral(index: i).getOrigin() != nil){
+                if synSet.getSynonym().getLiteral(index: i).getOrigin() != nil{
                     count += 1
                 }
             }
         }
         XCTAssertEqual(3981, count)
     }
-    
+
+    func testTotalGroupedLiterals() {
+        var count : Int = 0
+        for synSet in turkish.synSetList() {
+            for i in 0..<synSet.getSynonym().literalSize() {
+                if synSet.getSynonym().getLiteral(index: i).getGroupNo() != 0{
+                    count += 1
+                }
+            }
+        }
+        XCTAssertEqual(5973, count)
+    }
+
     func testLiteralList() {
         XCTAssertEqual(82275, turkish.literalList().count)
     }

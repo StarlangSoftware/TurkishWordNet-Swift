@@ -38,6 +38,29 @@ public class Synonym{
         }
     }
     
+    public func getUniqueLiterals() -> [Synonym]{
+        var literalGroups : [Synonym] = []
+        var groupNo = -1
+        var synonym : Synonym = Synonym()
+        for literal in literals {
+            if literal.getGroupNo() != groupNo{
+                if groupNo != -1{
+                    literalGroups.append(synonym)
+                }
+                groupNo = literal.getGroupNo()
+                synonym = Synonym()
+            } else {
+                if groupNo == 0{
+                    literalGroups.append(synonym)
+                    synonym = Synonym()
+                }
+            }
+            synonym.addLiteral(literal: literal)
+        }
+        literalGroups.append(synonym)
+        return literalGroups
+    }
+    
     /**
      * Returns the element at the specified position in literals list.
      - Parameters:

@@ -101,6 +101,10 @@ public class WordNet: NSObject, XMLParserDelegate{
                 value = ""
             case "WIKI":
                 value = ""
+            case "ORIGIN":
+                value = ""
+            case "GROUP":
+                value = ""
             case "ILR":
                 value = ""
             case "SR":
@@ -133,6 +137,8 @@ public class WordNet: NSObject, XMLParserDelegate{
                 literal?.setSense(sense: Int(value)!)
             case "ORIGIN":
                 literal?.setOrigin(origin: value)
+            case "GROUP":
+                literal?.setGroupNo(groupNo: Int(value)!)
             case "POS":
                 switch value {
                     case "a":

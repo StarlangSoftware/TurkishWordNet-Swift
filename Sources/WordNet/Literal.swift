@@ -13,6 +13,7 @@ public class Literal : Equatable{
     public var sense: Int
     public var synSetId: String
     public var origin: String? = nil
+    public var groupNo: Int = 0
     public var relations: [Relation]
     
     /**
@@ -77,7 +78,25 @@ public class Literal : Equatable{
     public func setOrigin(origin: String){
         self.origin = origin
     }
+
+    /**
+     * Accessor method to return the group no of the literal.
+     *
+     - Returns: group no of the literal
+     */
+    public func getGroupNo() -> Int{
+        return groupNo
+    }
     
+    /**
+     * Mutator method to set the group no with specified group no.
+     - Parameters:
+     - origin: group no of the literal to set
+     */
+    public func setGroupNo(groupNo: Int){
+        self.groupNo = groupNo
+    }
+
     /**
      * Mutator method to set the sense index of the literal.
      - Parameters:
