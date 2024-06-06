@@ -25,6 +25,8 @@ public class WordNet: NSObject, XMLParserDelegate{
     private var synonymMode: Bool = false
     private var to: String? = nil
     
+    /// Calls the parser for the wordnet with default value of turkish_wordnet.xml.
+    /// - Parameter fileName: File name of the wordnet.
     private func parse(fileName: String = "turkish_wordnet"){
         let url = Bundle.module.url(forResource: fileName, withExtension: "xml")
         let parser : XMLParser = XMLParser(contentsOf: url!)!
@@ -218,6 +220,13 @@ public class WordNet: NSObject, XMLParserDelegate{
         _literalList[literal.getName()] = literals
     }
     
+    /// Updates the wordnet according to the situation that an old synset replaced with a new synset. There are three
+    /// possibilities: (i) The new synset has a relation with the old synset, then the relation is removed,
+    /// (ii) A synset has the same type of relation with old synset and new synset, then the relation is removed,
+    /// (iii) None of the above, then the old synset id in the relation is replaced with the new synset id.
+    /// - Parameters:
+    ///   - oldSynSet: Old synset to be replaced
+    ///   - newSynSet: New synset replacing the old synset
     private func updateAllRelationsAccordingToNewSynSet(oldSynSet: SynSet, newSynSet: SynSet){
         for synSet in synSetList(){
             var i : Int = 0

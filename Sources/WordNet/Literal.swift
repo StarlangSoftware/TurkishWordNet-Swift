@@ -187,6 +187,8 @@ public class Literal : Equatable{
         self.synSetId = synSetId
     }
     
+    /// Overridden description method to print names and sense of literals.
+    /// - Returns: concatenated names and senses of literals
     public func description() -> String{
         return name + " " + String(sense)
     }

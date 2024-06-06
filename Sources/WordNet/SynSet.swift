@@ -403,6 +403,8 @@ public class SynSet : Equatable{
         return lhs.id == rhs.id
     }
     
+    /// Overridden toString method to print the first definition or representative.
+    /// - Returns: print the first definition or representative.
     public func description() -> String{
         if definition != nil {
             return definition![0]
