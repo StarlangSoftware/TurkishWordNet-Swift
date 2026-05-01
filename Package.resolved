@@ -1,0 +1,61 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Corpus",
+        "repositoryURL": "https://github.com/StarlangSoftware/Corpus-Swift.git",
+        "state": {
+          "branch": null,
+          "revision": "a48a44e666068a0e46339c81ccdb317911fbed40",
+          "version": "1.0.17"
+        }
+      },
+      {
+        "package": "DataStructure",
+        "repositoryURL": "https://github.com/StarlangSoftware/DataStructure-Swift.git",
+        "state": {
+          "branch": null,
+          "revision": "465056a0e5b67e427fad4b6a081f97e976369f66",
+          "version": "1.0.4"
+        }
+      },
+      {
+        "package": "Dictionary",
+        "repositoryURL": "https://github.com/StarlangSoftware/Dictionary-Swift.git",
+        "state": {
+          "branch": null,
+          "revision": "559b53e0b7552d53ec17498d51c7fb635abbfb44",
+          "version": "1.0.11"
+        }
+      },
+      {
+        "package": "Math",
+        "repositoryURL": "https://github.com/StarlangSoftware/Math-Swift.git",
+        "state": {
+          "branch": null,
+          "revision": "ba2ccea1a395a5db077225033bd91227dc722ba0",
+          "version": "1.0.11"
+        }
+      },
+      {
+        "package": "MorphologicalAnalysis",
+        "repositoryURL": "https://github.com/StarlangSoftware/TurkishMorphologicalAnalysis-Swift.git",
+        "state": {
+          "branch": null,
+          "revision": "bcf68e4f19b6d09ba388b7b7d2f3ab5cf7cd0c0c",
+          "version": "1.0.6"
+        }
+      },
+      {
+        "package": "Util",
+        "repositoryURL": "https://github.com/StarlangSoftware/Util-Swift.git",
+        "state": {
+          "branch": null,
+          "revision": "4cb5b42b1cc866024ef52e4fdcf6f349a08837cc",
+          "version": "1.0.8"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
